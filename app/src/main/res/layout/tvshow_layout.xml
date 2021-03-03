@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="tvshowlist"
+            type="com.allformatevideoplayer.apidemo.models.TvShow" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="@{tvshowlist.name}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvt_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvt_title"
+            android:layout_marginTop="10dp"
+            android:text="@{tvshowlist.country}" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvt_subtitle"
+            android:layout_marginTop="10dp"
+            android:text="@{tvshowlist.network}" />
+
+        <ImageView
+            android:id="@+id/img_display"
+            app:profileImage="@{tvshowlist.imageThumbnailPath}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/tvt_subtitle"
+            android:src="@drawable/ic_launcher_background" />
+
+    </RelativeLayout>
+</layout>
